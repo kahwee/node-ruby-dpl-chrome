@@ -1,4 +1,7 @@
-FROM node-ruby-dpl:latest
+FROM kahwee/node-ruby-dpl:latest
+
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
+RUN dpkg -i dumb-init_*.deb
 
 RUN apt-get update -qqy \
   && apt-get -qqy install \
